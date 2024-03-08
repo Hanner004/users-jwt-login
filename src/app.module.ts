@@ -6,6 +6,9 @@ import { ConfigModule } from '@nestjs/config';
 import { validationSchema } from './env-validator';
 import { JwtModule } from '@nestjs/jwt';
 
+import { DatabaseModule } from './database/database.module';
+import { UsersModule } from './users/users.module';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -13,6 +16,8 @@ import { JwtModule } from '@nestjs/jwt';
       validationSchema,
     }),
     { ...JwtModule.register({}), global: true },
+    DatabaseModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
