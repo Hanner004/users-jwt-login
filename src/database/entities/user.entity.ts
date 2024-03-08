@@ -16,6 +16,6 @@ export class User extends BaseEntity {
   @Index('IDX_USER_EMAIL', { unique: true, where: `(deleted_at is null)` })
   email: string;
 
-  @Column()
+  @Column({ select: false })
   password: string;
 }
