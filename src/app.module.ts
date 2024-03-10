@@ -13,8 +13,8 @@ import {
 } from './utils/strategies/jwt';
 
 import { DatabaseModule } from './database/database.module';
-import { UsersModule } from './routes/users/users.module';
 import { AuthModule } from './routes/auth/auth.module';
+import { UsersModule } from './routes/users/users.module';
 
 @Module({
   imports: [
@@ -24,8 +24,8 @@ import { AuthModule } from './routes/auth/auth.module';
     }),
     { ...JwtModule.register({}), global: true },
     DatabaseModule,
-    UsersModule,
     AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [

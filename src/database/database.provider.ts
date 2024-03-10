@@ -1,6 +1,7 @@
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Logger } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 import * as entities from './entities';
 
 const entitiesLists = Object.values(entities);

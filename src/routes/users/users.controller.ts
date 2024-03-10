@@ -1,19 +1,24 @@
 import {
   Controller,
   Get,
-  Post,
   Body,
   Patch,
   Param,
   Delete,
   ParseUUIDPipe,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { AccessTokenGuard } from 'src/utils/guards/jwt';
 
 import { UsersService } from './users.service';
+
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
+@UseGuards(AccessTokenGuard)
+@ApiBearerAuth()
 @ApiTags('users')
 @Controller('users')
 export class UsersController {
