@@ -19,13 +19,6 @@ import { UpdateUserDto } from './dto/update-user.dto';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post()
-  async create(@Body() createUserDto: CreateUserDto) {
-    const user = await this.usersService.create(createUserDto);
-    delete user.password;
-    return user;
-  }
-
   @Get()
   async findAll() {
     return await this.usersService.findAll();

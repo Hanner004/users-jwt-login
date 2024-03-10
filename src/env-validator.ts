@@ -8,4 +8,8 @@ export const validationSchema = Joi.object({
   PGDATABASE: Joi.string().required(),
   SWAGGER_USER: Joi.string().required(),
   SWAGGER_PASS: Joi.string().required(),
+  JWT_ACCESS_KEY: Joi.string().required(),
+  JWT_REFRESH_KEY: Joi.string().required(),
+  HTTP_BASIC_USER: Joi.string().required(),
+  HTTP_BASIC_PASS: Joi.string().required(),
 });
